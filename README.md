@@ -1,28 +1,124 @@
-# Keerthana J — Personal Portfolio
+# Keerthana J — Personal Portfolio Website
 
-A responsive blue-themed personal portfolio made with Django, SQLite, HTML, CSS, JavaScript, and Bootstrap 5. It includes animated navigation and reveal effects, education, skill and soft-skill cards, project detail pages, a certificate section, downloadable resume, and a contact form that stores messages in SQLite.
+## CODTECH Internship Details
 
+- **Intern ID:** CIS72
+- **Intern Name:** Keerthana J
+- **Internship Duration:** 4 Weeks
+- **Project Name:** Personal Portfolio Website
+- **Project Type:** Web Development
+- **Framework:** Django
 
-## Quick start (Windows)
+## Project Description
 
-1. Extract the ZIP file.
-2. Open the extracted `portfolio_project` folder in VS Code.
-3. Open the VS Code terminal (`Terminal > New Terminal`).
-4. Create a virtual environment:
+A responsive blue-themed personal portfolio website developed using Django, SQLite, HTML, CSS, JavaScript, and Bootstrap 5.
 
-   ```bat
-   py -m venv .venv
-   ```
-5. Activate it:
+The website showcases personal information, education, technical skills, soft skills, projects, certificates, and resume. It includes animated navigation, scroll-reveal effects, individual project detail pages, and a contact form that stores messages in an SQLite database.
 
-   ```bat
-   .venv\Scripts\activate
-   ```
-   ### Configure environment variables
+## Technologies Used
+
+- Python
+- Django
+- SQLite
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap 5
+- Font Awesome
+
+## Key Features
+
+- Responsive blue-themed portfolio design.
+- Animated navigation and reveal effects.
+- Personal introduction and profile section.
+- Education details.
+- Technical skills and soft-skill cards.
+- Project showcase with individual project detail pages.
+- Certificate section.
+- Downloadable resume.
+- Contact form with server-side validation.
+- CSRF protection.
+- Contact messages stored in SQLite.
+- Django Admin integration for managing contact messages.
+
+## Project Structure
+
+```text
+portfolio_project/
+│
+├── portfolio/
+│   ├── migrations/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+│
+├── portfolio_project/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   ├── images/
+│   │   ├── profile.jpg
+│   │   └── python_certificate_preview.png
+│   └── documents/
+│       ├── keerthana_resume_redesigned.pdf
+│       └── python_essentials_1.pdf
+│
+├── templates/
+│   ├── base.html
+│   └── portfolio/
+│       ├── index.html
+│       └── project_detail.html
+│
+├── .gitignore
+├── manage.py
+├── requirements.txt
+└── README.md
+```
+
+## Installation and Setup (Windows)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/keerthana3467/keerthana-personal-portfolio.git
+```
+
+### 2. Open the project folder
+
+```bash
+cd keerthana-personal-portfolio
+```
+
+Open the folder in VS Code.
+
+### 3. Create a virtual environment
+
+```bash
+py -m venv .venv
+```
+
+### 4. Activate the virtual environment
+
+```bash
+.venv\Scripts\activate
+```
+
+### 5. Configure environment variables
 
 Create a `.env` file in the project root (the same folder as `manage.py`).
 
-Generate a new Django secret key using:
+Generate a Django secret key:
 
 ```powershell
 python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
@@ -36,48 +132,74 @@ DJANGO_DEBUG=True
 DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
 ```
 
-Replace `your_generated_secret_key` with your generated key.
+Replace the placeholder with your generated secret key.
 
-Never upload the `.env` file to GitHub.
-6. Install dependencies:
+**Important:** Never upload `.env` to GitHub.
 
-   ```bat
-   pip install -r requirements.txt
-   ```
-7. Apply database migrations:
+### 6. Install dependencies
 
-   ```bat
-   py manage.py migrate
-   ```
-8. Create an admin account:
+```bash
+pip install -r requirements.txt
+```
 
-   ```bat
-   py manage.py createsuperuser
-   ```
-   Follow the prompts to set the username and password.
-9. Start the local server:
+### 7. Apply database migrations
 
-   ```bat
-   py manage.py runserver
-   ```
-10. Open the portfolio: **http://127.0.0.1:8000/**. Admin: **http://127.0.0.1:8000/admin/**.
+```bash
+py manage.py migrate
+```
 
-## Contact form
+### 8. Create an admin account
 
-The form validates fields on the server, includes CSRF protection, and saves messages to the SQLite database. Email is optional. To review messages, sign into Django Admin and open Contact messages.
+```bash
+py manage.py createsuperuser
+```
+
+Follow the prompts to create your administrator account.
+
+### 9. Start the development server
+
+```bash
+py manage.py runserver
+```
+
+### 10. Open the website
+
+Portfolio: http://127.0.0.1:8000/
+
+Django Admin: http://127.0.0.1:8000/admin/
+
+## Contact Form
+
+The contact form validates submitted fields on the server, includes CSRF protection, and stores messages in the SQLite database.
+
+Administrators can review submitted messages through Django Admin under Contact Messages.
+
+## Included Assets
+
+- `static/images/profile.jpg` — Profile photo.
+- `static/images/python_certificate_preview.png` — Certificate preview image.
+- `static/documents/python_essentials_1.pdf` — Python Essentials 1 certificate.
+- `static/documents/keerthana_resume_redesigned.pdf` — Downloadable resume.
+
+## Testing
+
+The project was checked using Django's system check and automated tests.
+
+**Test results:**
+- Django system check: Passed.
+- Automated tests: 5 passed.
+- Test failures: 0.
+
+## Security and Deployment Notes
+
+- The project is configured for local development.
+- Before production deployment, set `DEBUG=False`.
+- Use a secure secret key.
+- Configure allowed hosts appropriately.
+- Never expose environment variables or credentials.
+- Follow Django deployment security recommendations.
+
+Bootstrap and Font Awesome are loaded through CDNs, so an internet connection is required for their external styling and icons.
 
 
-## Included assets
 
-- `static/images/profile.jpg` — supplied profile photo
-- `static/documents/python_essentials_1.pdf` — supplied original certificate copy for direct preview/download
-- `media/certificates/python_essentials_1.pdf` — original certificate asset retained in media
-- `static/documents/keerthana_resume.pdf` — generated one-page resume; update placeholders/contact details if needed
-
-
-## Notes
-
-- This project is intended for local development. Before deployment, set `DEBUG = False`, use a secure secret key, configure allowed hosts, and follow Django deployment security guidance.
-- Bootstrap and Font Awesome are loaded from CDNs, so their icons/framework styling require an internet connection when viewing the site.
-- Skill tiles intentionally do not show proficiency percentages because exact proficiency levels were not provided.
-- Project descriptions and technologies are kept to the supplied details.
