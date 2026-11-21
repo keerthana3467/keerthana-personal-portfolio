@@ -148,7 +148,7 @@ pip install -r requirements.txt
 py manage.py migrate
 ```
 
-### 8. Create an admin account
+### 8. Create an admin account-optional
 
 ```bash
 py manage.py createsuperuser
